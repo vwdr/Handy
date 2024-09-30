@@ -1,4 +1,4 @@
-# Handy: Sign Language Transcriber
+# Handy
 
 ## 💡 Story and Motivation
 
