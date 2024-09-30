@@ -1,71 +1,58 @@
-# ASL 🤟 Transcriber
+# Handy: Sign Language Transcriber
 
-## 💡 Motivation
+## 💡 Story and Motivation
 
-Nowadays, our dependence on technology has become increasingly evident, especially with the recent circumstances that have propelled us to the era of online education and remote work. It is also estimated that over 5% of the world's population (~432 million adults/34 million children), and that by 2050, over 700 million people (1 in every 10!) will have disabling hearing loss (WHO, 2020).
+At an FTC robotics outreach event, I met a young kid fascinated by our robots, but there was a barrier—I quickly realized that they could only communicate in sign language, and I didn’t know it. While I tried my best to connect with gestures, it was clear that something more was needed. That moment sparked an idea: **Handy**, an app that transcribes sign language into spoken words and text in real time, breaking down the communication barriers between the deaf and hearing communities.
 
-The **ASL Transcriber** aims to begin bridging the gap between disabilities and online services by **using computer vision to transcribe a user's signing and converts it to the English alphabet counterpart**. This provides a flexible alternative to typing a message out using the keyboard that is more engaging and dynamic for both the signer and the audience.
-
-<br>
+Today, more than 5% of the world’s population (~432 million adults and 34 million children) live with disabling hearing loss. By 2050, that number is expected to grow to over 700 million (1 in every 10 people) globally (WHO, 2020). With this in mind, **Handy** aims to leverage modern technology to promote inclusivity, allowing more people to connect and communicate without learning a new language first.
 
 ## 🕹️ Technologies Used
 
-- **OpenCV:** A Python module to capture real-time webcam data for ASL analysis.
-- **Mediapipe (Hand Module):** A machine learning solution to infer twenty-one 3D landmarks of a hand from a single frame, developed by Google.
-
-<br>
+- **OpenCV**: Used to capture real-time data from the device’s camera, allowing for dynamic analysis of hand movements and gestures.
+- **Mediapipe (Hand Module)**: A powerful machine learning solution developed by Google that tracks and infers 21 3D hand landmarks from each camera frame.
 
 ## 🔬 Underlying Research
 
-The Mediapipe module we used was first introduced by Google engineers in the 2006 paper _MediaPipe Hands: On-device Real-time Hand Tracking_. Those interested in reading the full research paper can find it [🔗here](https://arxiv.org/pdf/2006.10214.pdf). Mediapipe supports a diverse variety of [other ML solutions](https://google.github.io/mediapipe/) including Face Detection, Face Mesh, Pose Estimation, etc.
-
-<br>
+Handy’s hand detection and transcription are built using Google’s Mediapipe, which was first introduced in the research paper *“MediaPipe Hands: On-device Real-time Hand Tracking.”* This module allows the app to accurately detect and interpret hand signs, turning them into actionable data for transcription. Mediapipe also powers solutions such as face detection, face mesh, and pose estimation, expanding the app’s future capabilities.
 
 ## 📥 Installation
 
-For the easiest installation, clone this repo in the folder you wish to store it:
+To set up Handy on your device:
 
-```
-git clone https://github.com/JTao02/ASL_Alphabet_Interpretation.git
-```
+1. Clone the repository in your chosen directory:
+   ```bash
+   git clone https://github.com/YourRepo/Handy.git
+   ```
 
-Once it's cloned, install the dependencies in the requirements.txt:
+2. Navigate into the project folder and install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-```
-pip install -r requirements.txt
-```
-
-The project can now be run locally!
-
-<br>
+3. Run the application locally:
+   ```bash
+   python app.py
+   ```
 
 ## 🖥️ Usage
 
-To use this application, you will need a working computer and camera. Sit or stand at a comfortable distance away from the camera (~0.5m) and ensure lighting is fair. Position your hand in front of the camera, minimizing the depth of each of your fingers to the camera (ie. all the fingers should be a similar distance from the camera).
+To use Handy:
 
-There are four points of interest on the screen:
+1. Open the app on a device equipped with a camera.
+2. Position yourself comfortably, ensuring the camera has a clear view of your hands (about 0.5 meters from the camera).
+3. Start signing, and the app will detect your gestures in real time and transcribe them into text or spoken words.
+4. **Handy** will display:
+   - Current word being formed from your signing
+   - Individual letters or signs as they are detected
+   - A preview of the translated sentence or word being formed
 
-1. Top Left: Countdown to display how many seconds are left to capture current sign.
-2. Bottom Left: Current word being formed from each subsequent signed letter.
-3. Top Right: Current letter that is being signed. This letter will be captured once the countdown reaches 0.
-4. Center: Capture word indicating that a snapshot has just been taken of the hand.
+Ensure good lighting and that your hands are fully visible to the camera for the most accurate results.
 
-<br>
+## 🔮 Future Directions
 
-## 🔮 Future Direction
+The potential for Handy is limitless! Here are some of the exciting directions we plan to take this project:
 
-There are many directions that this project can be taken in, with additional features we wish to implement including:
-
-- Improving hand detection to including recognizing gestures with motion
-- Auto-completing to suggest possible words for the signer to use
-- Extending the transcription beyond the English language (ie. enabling ASL outputs to French)
-- Integrating face mesh detection to recognize emotion that accompanies current signing to improve word suggestion accuracy
-
-<br>
-
-## 🎉 Contributions
-
-- Jason Tao
-- Brian Hu
-- Terry Ju
-- Stephen Luu
+- **Improved Hand Detection**: Expanding beyond static signs to detect motion-based gestures.
+- **Auto-Complete Feature**: Suggesting words or phrases as users sign to make conversations faster and more fluid.
+- **Multilingual Transcription**: Translating ASL not only to English but also to other languages like French and Spanish.
+- **Emotion Recognition**: Using face mesh technology to identify the emotions accompanying signs, improving the app’s contextual understanding.
